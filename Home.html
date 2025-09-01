@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ToolShop - Home</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: url('images/paint.webp') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.6); /* dark overlay so text is visible */
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      background: rgba(0,0,0,0.7);
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 15px;
+      font-weight: bold;
+    }
+
+    .container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .welcome-box {
+      text-align: center;
+      background: rgba(255,255,255,0.1);
+      padding: 30px;
+      border-radius: 12px;
+    }
+
+    .welcome-box h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .welcome-box p {
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+<div class="overlay">
+  <nav>
+    <div class="logo">🎨 ToolShop</div>
+    <div>
+      <a href="Home.html">Home</a>
+      <a href="Product.html">Products</a>
+      <a href="cart.html">Cart</a>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="welcome-box">
+      <h1>Welcome to ToolShop</h1>
+      <p>Your one-stop shop for tools and building materials in South Africa 🇿🇦</p>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+
