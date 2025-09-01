@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ToolShop - Products</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav>
+  <div class="logo">🎨 ToolShop</div>
+  <div>
+   <nav>
+  <a href="index.html">Home</a>
+  <a href="products.html">Products</a>
+  <a href="cart.html">Cart</a>
+  <a href="login.html">Login</a>
+  <a href="register.html">Register</a>
+</nav>
+
+<div class="container">
+  <!-- Greeting -->
+  <div class="card" style="width:100%">
+    <h2 id="welcomeMessage">Welcome!</h2>
+  </div>
+</div>
+
+<div class="container">
+<div class="product">
+  <img src="images/hammer.jpg" alt="Hammer">
+  <p>Hammer - R150</p>
+  <button>Add to Cart</button>
+</div>
+
+<div class="product">
+  <img src="images/drill.jpg" alt="Drilling Machine">
+  <p>Drilling Machine - R1200</p>
+  <button>Add to Cart</button>
+</div>
+
+<div class="product">
+  <img src="images/tiles.jpg" alt="Tiles">
+  <p>Tiles - R300</p>
+  <button>Add to Cart</button>
+</div>
+
+<div class="product">
+  <img src="images/cement.jpg" alt="Cement">
+  <p>Cement - R90</p>
+  <button>Add to Cart</button>
+</div>
+
+<div class="product">
+  <img src="images/paint.jpg" alt="Paint">
+  <p>Paint - R250</p>
+  <button>Add to Cart</button>
+</div>
+
+<script>
+// Redirect to login if not logged in
+const user = JSON.parse(localStorage.getItem('loggedInUser'));
+if(!user){
+  alert('Please login first!');
+  window.location.href = 'login.html';
+} else {
+  document.getElementById('welcomeMessage').innerText = "Welcome To ToolShop" 👋";
+}
+
+// Add to cart
+function addToCart(product, price){
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  cart.push({ product, price });
+  localStorage.setItem('cart', JSON.stringify(cart));
+  alert(product + ' added to cart!');
+}
+
+// Logout
+function logout(){
+  localStorage.removeItem('loggedInUser');
+  alert('Logged out successfully!');
+}
+</script>
+</body>
+</html>
+
