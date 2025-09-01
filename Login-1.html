@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 50px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input[type="text"], input[type="password"] {
+      width: 300px;
+      padding: 8px;
+    }
+    .error {
+      color: red;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Login</h2>
+  <form id="loginForm">
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username">
+      <div id="usernameError" class="error"></div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password">
+      <div id="passwordError" class="error"></div>
+    </div>
+
+    <button type="submit">Login</button>
+  </form>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      // Clear previous errors
+      document.getElementById("usernameError").textContent = "";
+      document.getElementById("passwordError").textContent = "";
+
+      // Get values
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value;
+
+      let valid = true;
+
+      // Validate username
+      if (username === "") {
+        document.getElementById("usernameError").textContent = "Username is required.";
+        valid = false;
+      }
+
+      // Validate password
+      if (password.length <= 6 || password.length >= 20) {
+        document.getElementById("passwordError").textContent = "Password must be between 7 and 19 characters.";
+        valid = false;
+      } else if (password.toLowerCase() === "password") {
+        document.getElementById("passwordError").textContent = "Password cannot be the word 'password'.";
+        valid = false;
+      }
+
+      if (valid) {
+        alert("Login successful!");
+        // You can redirect or process login here
+      }
+    });
+  </script>
+
+</body>
+</html>

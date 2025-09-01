@@ -1,0 +1,155 @@
+<<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toolshop Management System</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f4f4f4;
+    }
+
+    nav {
+      background-color: #0077cc;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-right: 15px;
+      font-weight: bold;
+    }
+
+    .logo img {
+      vertical-align: middle;
+      width: 70px;
+    }
+
+    header {
+      margin-bottom: 20px;
+    }
+
+    #searchBar {
+      padding: 8px;
+      width: 300px;
+    }
+
+    .card {
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin: 10px;
+      width: 250px;
+      background-color: white;
+      border-radius: 8px;
+      display: inline-block;
+      vertical-align: top;
+      text-align: center;
+    }
+
+    .card img {
+      width: 100px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      background-color: #0077cc;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #005fa3;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #333;
+      color: white;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo"><img src="f:\Mashabane K CP(ISAT)\about - Copy\paint.jpg.webp" alt="Toolshop Logo"></div>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="cart.html">Cart</a>
+    <a href="login.html">Login</a>
+    <a href="register.html">Register</a>
+  </nav>
+
+  <header>
+    <h1>Toolshop Management System</h1>
+    <input type="text" id="searchBar" placeholder="Search products..." onkeyup="filterProducts()">
+  </header>
+
+  <section id="product-list">
+    <div class="card">
+      <h2>Hammer</h2>
+      <img src="f:\Mashabane K CP(ISAT)\about - Copy\hammer.jpg.png" alt="Hammer">
+      <p>Durable steel hammer for construction and DIY.</p>
+      <p><b>R150</b></p>
+      <button onclick="addToCart('Hammer', 150)">Order Now</button>
+    </div>
+
+    <div class="card">
+      <h2>Drilling Machine</h2>
+      <img src="f:\Mashabane K CP(ISAT)\about - Copy\drill_machine.jpg.png" alt="Drilling Machine">
+      <p>High-power drill for wood, metal, and concrete.</p>
+      <p><b>R1200</b></p>
+      <button onclick="addToCart('Drilling Machine', 1200)">Order Now</button>
+    </div>
+
+    <div class="card">
+      <h2>Tiles</h2>
+      <img src="f:\Mashabane K CP(ISAT)\about - Copy\tiles.jpg.webp" alt="Tiles">
+      <p>Premium ceramic tiles for flooring and walls.</p>
+      <p><b>R300</b></p>
+      <button onclick="addToCart('Tiles', 300)">Order Now</button>
+    </div>
+
+    <div class="card">
+      <h2>Cement</h2>
+      <img src="f:\Mashabane K CP(ISAT)\about - Copy\cement.jpg.png" alt="Cement">
+      <p>High-strength cement for building foundations.</p>
+      <p><b>R90</b></p>
+      <button onclick="addToCart('Cement', 90)">Order Now</button>
+    </div>
+
+    <div class="card">
+      <h2>Paint</h2>
+      <img src="f:\Mashabane K CP(ISAT)\about - Copy\paint.jpg.webp" alt="Paint">
+      <p>Weather-resistant paint for indoor and outdoor use.</p>
+      <p><b>R250</b></p>
+      <button onclick="addToCart('Paint', 250)">Order Now</button>
+    </div>
+  </section>
+
+  <section id="cart">
+    <h2>🛒 Cart</h2>
+    <ul id="cart-items"></ul>
+    <button onclick="checkout()">Complete Order</button>
+    <h3>Don't miss out on special promotion — ***Limited offer***</h3>
+  </section>
+
+  <footer>
+    &copy; 2025 Toolshop. All rights reserved.
+  </footer>
+
+</body>
+</html>
